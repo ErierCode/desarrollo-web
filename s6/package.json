@@ -1,0 +1,16 @@
+{
+  "name": "s6-typescript-catalog",
+  "version": "1.0.0",
+  "description": "Proyecto TypeScript con catálogo de libros tipado",
+  "main": "dist/index.js",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "keywords": ["typescript", "catalog", "desarrollo-web"],
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.9.2"
+  }
+}
