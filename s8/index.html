@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buscador de publicaciones · JSONPlaceholder</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <p class="eyebrow">S8 · Desarrollo web</p>
+        <h1>Buscador de publicaciones</h1>
+        <p class="lede">
+          Consulta la API pública JSONPlaceholder desde el navegador y revisa
+          cada estado de la interfaz.
+        </p>
+      </header>
+
+      <main>
+        <section class="panel" aria-labelledby="form-heading">
+          <h2 id="form-heading">Formulario de búsqueda</h2>
+
+          <form id="search-form">
+            <div class="field">
+              <label for="userId">ID de usuario</label>
+              <input
+                id="userId"
+                name="userId"
+                type="number"
+                inputmode="numeric"
+                required
+                min="1"
+                max="10"
+                step="1"
+                value="1"
+                aria-describedby="userId-help"
+              />
+              <p id="userId-help" class="hint">
+                JSONPlaceholder tiene usuarios del 1 al 10.
+              </p>
+            </div>
+
+            <div class="field">
+              <label for="keyword">Palabra clave (opcional)</label>
+              <input
+                id="keyword"
+                name="keyword"
+                type="text"
+                maxlength="40"
+                pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ0-9 ]*"
+                placeholder="Ej. qui"
+                aria-describedby="keyword-help"
+              />
+              <p id="keyword-help" class="hint">
+                Filtra por título o cuerpo. Máximo 40 caracteres; solo letras,
+                números y espacios.
+              </p>
+            </div>
+
+            <button id="submit-button" type="submit">Buscar publicaciones</button>
+          </form>
+        </section>
+
+        <section class="panel" aria-labelledby="results-heading">
+          <h2 id="results-heading">Resultados</h2>
+          <p
+            id="status"
+            class="status"
+            role="status"
+            aria-live="polite"
+            data-state="idle"
+          >
+            Estado inicial: elige un usuario (1–10) y, si quieres, una palabra
+            clave.
+          </p>
+          <ul id="results" class="results" aria-live="polite"></ul>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./dist/main.js"></script>
+  </body>
+</html>
