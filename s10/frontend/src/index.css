@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", "Avenir Next", sans-serif;
+  color: #241c16;
+  background:
+    radial-gradient(900px 420px at 0% -10%, rgba(15, 92, 76, 0.16), transparent 55%),
+    linear-gradient(180deg, #f7f1e6 0%, #efe4d2 100%);
+  padding: 32px 20px 64px;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: #0f5c4c;
+  color: #f7f1e6;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid #0f5c4c;
+  outline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 20px 14px 48px;
+  }
+}
