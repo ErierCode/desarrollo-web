@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: s15-postgres
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: s15
+      POSTGRES_PASSWORD: s15
+      POSTGRES_DB: matches
+    volumes:
+      - s15_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U s15 -d matches"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  s15_pgdata:
